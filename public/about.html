@@ -96,6 +96,17 @@ pre {
 }
 code {color:var(--bg);background-color:var(--text);font-size:calc(0.8rem + 0.5vw);padding-left: 0.2em;padding-right: 0.2em;} 
 
+button {
+	border-radius: 30px;
+	border: 1px solid black;
+	background: none;
+	padding: 0px 10px;
+	font-weight: bold;
+	font-family: sans;
+	color: black;
+	font-size: 20px;
+}
+
 dd {margin-left:2em;}
 details {padding-bottom:0ex;}
 fieldset {border:1px solid;}
@@ -157,7 +168,7 @@ footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-
 
 <p>If you want to contact me about commercial work, please first take a look at my <a href="resume/index.html">resume</a>. Email is generally the best method of communication for me, and you can find my email address linked in the footer.</p>
 
-<p>If you like, you can <button onclick="usercount()">say hi</button> to me directly! Please don't spam it though, it's not smart enough to know better. So far, <span id="count"></span> people have said hi :></p>
+<p>If you like, you can <button onclick="usercount()">say hi</button> to me directly! Please don't spam it though, it's not smart enough to know better. So far, <code id="count"></span> people have said hi :></p>
 <script>
 	function usercount() {
 		var req = new XMLHttpRequest();
