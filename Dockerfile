@@ -1,15 +1,5 @@
-# FROM rust:1.67 as builder
-# WORKDIR /usr/src/cmsrs
-# COPY . .
-# RUN cargo install --path .
-# 
-# FROM debian:bullseye-slim
-# RUN apt-get update && rm -rf /var/lib/apt/lists/*
-# COPY --from=builder /usr/local/cargo/bin/cmsrs /usr/local/bin/cmsrs
-# CMD ["cmsrs"]
-
+# syntax=docker/dockerfile:1.3-labs
 FROM rust:1.67 as builder
-# FROM rustlang/rust as builder
 
 WORKDIR /opt/cmsrs
 
@@ -22,14 +12,11 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry cargo build --release
 
 # Clobber fake project with real project
 COPY src src
-# RUN --mount=type=cache,target=/usr/local/cargo/registry <<EOF
-  # set -e
-  # touch src/main.rs
-  # cargo install --path .
-# EOF
-RUN --mount=type=cache,target=/usr/local/cargo/registry set -e
-RUN --mount=type=cache,target=/usr/local/cargo/registry touch src/main.rs
-RUN --mount=type=cache,target=/usr/local/cargo/registry cargo install --path .
+RUN --mount=type=cache,target=/usr/local/cargo/registry <<EOF
+  set -e
+  touch src/main.rs
+  cargo install --path .
+EOF
 
 FROM debian:bullseye-slim
 
