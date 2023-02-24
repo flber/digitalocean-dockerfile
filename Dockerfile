@@ -8,7 +8,7 @@
 # COPY --from=builder /usr/local/cargo/bin/cmsrs /usr/local/bin/cmsrs
 # CMD ["cmsrs"]
 
-FROM rustlang/rust as builder
+FROM rust:1.67 as builder
 
 WORKDIR /opt/cmsrs
 
