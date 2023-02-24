@@ -13,9 +13,10 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry cargo build --release
 # Clobber fake project with real project
 COPY src src
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-  && set -e \
-  && touch src/main.rs \
-  && cargo install --path .
+  set -e && \
+  touch src/main.rs && \
+  cargo install --path .
+
 
 FROM debian:bullseye-slim
 
