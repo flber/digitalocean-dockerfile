@@ -57,6 +57,17 @@ pre {
 }
 code {color:var(--bg);background-color:var(--text);font-size:calc(0.8rem + 0.5vw);padding-left: 0.2em;padding-right: 0.2em;} 
 
+button {
+	border-radius: 30px;
+	border: 1px solid black;
+	background: none;
+	padding: 0px 10px;
+	font-weight: bold;
+	font-family: sans;
+	color: black;
+	font-size: 20px;
+}
+
 dd {margin-left:2em;}
 details {padding-bottom:0ex;}
 fieldset {border:1px solid;}
