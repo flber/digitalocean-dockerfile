@@ -9,6 +9,7 @@
 # CMD ["cmsrs"]
 
 FROM rust:1.67 as builder
+# FROM rustlang/rust as builder
 
 WORKDIR /opt/cmsrs
 
@@ -36,7 +37,7 @@ WORKDIR /opt/cmsrs
 
 ENV TZ="America/Los_Angeles"
 
-RUN apt-get update && apt-get install ca-certificates -yq
+RUN apt-get update
 
 COPY --from=builder /usr/local/cargo/bin/cmsrs /usr/local/bin/cmsrs
 
