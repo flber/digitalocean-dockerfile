@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>MX - Grimoire</title>
+	<title>Grimoire</title>
 	<link rel="icon" href="crow.ico?" type="image/x-icon">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,6 +96,17 @@ pre {
 }
 code {color:var(--bg);background-color:var(--text);font-size:calc(0.8rem + 0.5vw);padding-left: 0.2em;padding-right: 0.2em;} 
 
+button {
+	border-radius: 30px;
+	border: 1px solid var(--text);
+	background: none;
+	padding: 0px 10px;
+	font-weight: bold;
+	font-family: sans;
+	color: var(--text);
+	font-size: 20px;
+}
+
 dd {margin-left:2em;}
 details {padding-bottom:0ex;}
 fieldset {border:1px solid;}
@@ -133,7 +144,6 @@ fieldset {border:1px solid;}
 footer {border-top:1.5px solid;padding:1em 0 0 0;margin:1em 0 0 0;clear:both}
 footer>* {display:inline-block;}
 footer img {margin:0 0 -10px 0;width:30px;} 
-footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-rotate(289deg)brightness(88%)contrast(79%);}
 
 	</style>
 
@@ -563,7 +573,7 @@ end > hosts.txt
 
 <p>? parallel -j 12 ffmpeg -i {1} {1.}.{2} ::: **/*.flac ::: mp3</p>
 
-		<p><b>Incoming:</b> <a href="now.html">now</a> <a href="wiki.html">wiki</a> </p>
+		<p><b>Incoming:</b> <a href="ean-dockerfile/pages/now.html">ean-dockerfile/pages/now</a> <a href="ean-dockerfile/pages/wiki.html">ean-dockerfile/pages/wiki</a> </p>
 	</main>
 
 	<footer>
@@ -584,7 +594,7 @@ end > hosts.txt
 		</a>
 		<img loading="lazy" style="width:88px;height:31px;margin-left:0.5ex;" title="my homemade site banner!" alt="site banner"
 			src="images/icon.gif" />
-		<span style="float: right;"><em>Last updated: 020523</em></span>
+		<span style="float: right;"><em>Last updated: 022523</em></span>
 	</footer>
 </body>
 </html>

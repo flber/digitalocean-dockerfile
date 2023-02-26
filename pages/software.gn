@@ -1,0 +1,38 @@
+!meta!
+title: Software
+!meta!
+
+[h2|Software]
+[p|Just a small list of the software I use, and my configs for that software]
+
+[h3|Software:]
+[ul|
+	[li|window manager: [a, href: "https://i3.org/"|i3]]
+	[li|terminal: [a, href: "https://sw.kovidgoyal.net/kitty/"|Kitty]]
+	[li|web browser: [a, href: "https://qutebrowser.org/"|qutebrowser]]
+	[li|text editor: [a, href: "https://micro-editor.github.io/"|micro]]
+	[li|file explorer: [a, href: "https://ranger.github.io/"|ranger]]
+	[li|music player: [a, href: "https://cmus.github.io/"|cmus]]
+	[li|IRC client: [a, href: "https://github.com/osa1/tiny"|tiny]]
+]
+ 
+[h3|Configs:]
+[ul|
+	[li|Kitty[ul|
+		[li|main: [a, href: "files/kitty/kitty.conf"|kitty.conf]]
+		[li|snazzy colors: [a, href: "files/kitty/kitty-snazzy.conf"|kitty-snazzy.conf]]
+		[li|unicode: [a, href: "files/kitty/kitty-unicode-favorites.conf"|kitty-unicode-favorites.conf]]
+	]]
+	[li|Micro[ul|
+		[li|main: [a, href: "files/micro/micro-settings.json"|micro-settings.json]]
+		[li|key-binds: [a, href: "files/micro/micro-bindings.json"|micro-bindings.json]]
+		[li|granite colors: [a, href: "files/micro/micro-granite.yaml"|micro-granite.yaml]]
+	]]
+	[div, style: "display: none;"|
+		[li|Sway[ul|
+			[li|main: [a, href: "files/sway/config"|config]]
+			[li|screen saver: [a, href: "files/sway/config.d/screenlock_powersave"|screenlock_powersave]]
+			[li|swaybar: [a, href: "files/sway/scripts/sway_bar.sh"|sway_bar.sh]]
+		]]
+	]
+]

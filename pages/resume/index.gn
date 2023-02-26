@@ -1,0 +1,49 @@
+!meta!
+template: resume
+title: Resume
+static: true
+!meta!
+
+[div class: "row"|
+	[div class: "column"|
+		[div, style: "border: 1px solid;padding:1em;"|
+			[h1|Ben Hammond]
+			[h3|benrhammond {at} gmail {dot} com]
+		]
+		[p|I'm Ben (they/them), a second year college student working on various software projects. You can view my Github profile [a, href: "https://github.com/flber"|here], which shows most of my work over the past five or so years. I also have a [a, href: "https://www.linkedin.com/in/ben-hammond-855ba5191/"|LinkedIn]. My [a, href: "../home.html"|website] is a blog and personal wiki which I update with some regularity. On it, you can learn more about the [a, href: "https://github.com/flber/Pillar"|tools] I built to write it and learn more [a, href: "../about.html"|about me].]
+
+		[h2|[a, href: "https://www.linkedin.com/in/ben-hammond-855ba5191/"|Work Experience]]
+
+		[div, 
+		class: "listing line", 
+		style: "margin-top:1em;"|
+			[span|[a, href: "https://rarebase.org"|[b|Rarebase]] [i|Engineering Internship]] [span|2 months]
+		]
+		[p|At Rarebase I built real-time data visualization apps used both internally and externally, deployed with Google Cloud Computing services such as Cloud Run and Workflows.]
+		[p|[b|Recommendation:] "Ben proved to be a versatile, self-directed engineer. They built data visualization web apps, including the data pipelines feeding them, to view aggregate statistics of biological datasets, helping improve our operational insight. This required assessing and using a number of technologies that were not yet currently at use in Rarebase" - [a, href: "https://www.linkedin.com/in/clayton-mellina?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BR%2BSqLv43RyGyFkJpNz2tFA%3D%3D"|Clayton Mellina]]
+	]
+
+	[div class: "column"|
+		[h2|Technical Knowledge]
+		
+		[p|Along with the languages listed, I'm comfortable with bash, batch (begrudgingly), rsync, git, CI/CD workflows, Google and AWS cloud computing services, Github actions, frontend and backend development in general, Docker, and nginx. I also have experience with Windows 10, Mac, and linux (Arch, Debian, and Ubuntu).]
+
+		[ul, class: "ul-line", style: "list-style:none;padding:0"|
+			[li, class: "listing"|HTML5 [span|4 years]]
+			[li, class: "listing"|CSS [span|4 years]]
+			[li, class: "listing"|Ruby [span|3 years]]
+			[li, class: "listing"|Rust [span|3 years]]
+			[li, class: "listing"|Java [span|2 years]]
+			[li, class: "listing"|JavaScript [span|2 years]]
+			[li, class: "listing"|Lua [span|3 years]]
+			[li, class: "listing"|Python [span|4 years]]
+			[li, class: "listing"|Node.js [span|2 years]]
+			[li, class: "listing"|C++ [span|1 year]]
+			[li, class: "listing"|C [span|1 year]]
+		]
+
+		[p|I have experience writing production code, mostly python, for Google Cloud Computing services such as Functions, Run, and Workflows, and I'm familiar using Big Query, Dataplex, Cloud Scheduler, and IAM role management.]
+
+		[p|I'm comfortable working both semi-independently and in team settings.]
+	]
+]

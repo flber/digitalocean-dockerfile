@@ -1,0 +1,67 @@
+!meta!
+title: About
+!meta!
+
+[h2|Hi]
+
+[p|I'm Ben, a person (who prefers they/them pronouns) from the bay area, though I go to school in Santa Cruz. I like to make [a, href: "recipes.html"|food], occasionally [a, href: "drawings.html"|draw], and tell computers to do things for me (though we often have disagreements).]
+
+[p|I've worked on a few [a, href: "projects.html"|projects], including a [a, href: "https://flber.itch.io/"|game or two]. When I'm not getting frustrated with computers for disagreeing with what I want them to do, I enjoy [a, href: "hiking.html"|hiking], playing [a, href: "games.html"|video games], and [a, href: "reading.html"|reading].]
+
+[p|If you want to contact me about commercial work, please first take a look at my [a, href: "resume/index.html"|resume]. Email is generally the best method of communication for me, and you can find my email address linked in the footer.]
+
+[p|If you like, you can [button onclick="usercount()"|say hi] to me directly! Please don't spam it though, it's not smart enough to know better. So far, [code id="count"|0?] people have said hi :>]
+[script|
+	function usercount() {
+		var req = new XMLHttpRequest();
+		req.open("POST", "/api/count");
+		req.send();
+		get_usercount()
+	}
+
+	window.onload = function() {
+		get_usercount()
+	}
+
+	function get_usercount() {
+		fetch("/api/count", {
+			method: "GET",
+			headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json',
+			}}).then(async (res) => {
+			const raw = await res.text();
+			const parsed = raw ? JSON.parse(raw) : { success: res.ok };
+
+			var num = document.getElementById("count");
+			num.innerHTML = parsed['user_count'];
+		})	
+	}
+]
+
+[span|
+	[img, loading: "lazy", style: "width:50%; display: inline-block;", src: "images/crow.jpg", alt: "myself drawn as a crow by one of my friends. I'm wearing overalls with small tools in them"|]
+	[img, loading: "lazy", style: "width:48%; display: inline-block;", src: "images/profile-bw-square.jpg", alt: "a digital art profile picture made by a friend: androgynous person with dark hair smiling with their eyes closed"|]
+]
+
+[p|You can find the source code for this site in any of these places:]
+[ul|
+	[li|[a, href: "https://codeberg.org/flbr/mx"|codeberg]]
+	[li|[a, href: "https://github.com/flber/Mineral-Existence"|github]]
+	[li|[a, href: "https://git.sr.ht/~flber/mineral-existence"|srht]]
+]
+
+[p|You can also check out the [a, href: "inventory.html"|inventory] page for a list of the hardware and software I use.]
+
+[p|Feel free to say hi on [a, href: "https://merveilles.town/@flbr"|mastodon] or via my [a, href: "mailto:benrhammond@gmail.com"|email]]
+
+[p|I'm also on [a, href: "https://webring.xxiivv.com/#icons"|a webring]! All the sites on it are pretty neat, including those of my neighbours:]
+[ul|
+	[li|Alessia Bellisario's [a, href: "https://aless.co/"|anti/pattern]]
+	[li|Martin Schotten's [a, href: "http://fragmentscenario.com/"|fragmentscenario]]
+]
+
+<!--
+[p|This is my [a, href: "https://wobble.town"|wobble], his name is kronk!]
+[a, href: "https://wobble.town/visit/"|[img, style: "margin-top:0em;width: 10%;", src: "https://wobble.town/visit/48/wobble.gif"|]]
+-->

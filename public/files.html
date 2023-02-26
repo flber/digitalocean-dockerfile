@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>MX - Files</title>
+	<title>Files</title>
 	<link rel="icon" href="crow.ico?" type="image/x-icon">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,6 +96,18 @@ pre {
 }
 code {color:var(--bg);background-color:var(--text);font-size:calc(0.8rem + 0.5vw);padding-left: 0.2em;padding-right: 0.2em;} 
 
+button {
+	border-radius: 30px;
+	border: 1px solid var(--text);
+	background: none;
+	padding: 0px 10px;
+	font-weight: bold;
+	font-family: sans;
+	color: var(--text);
+	font-size: 20px;
+}
+button:hover {color: var(--bg);background: var(--text);}
+
 dd {margin-left:2em;}
 details {padding-bottom:0ex;}
 fieldset {border:1px solid;}
@@ -109,12 +121,16 @@ fieldset {border:1px solid;}
 .row {display: flex;}
 .column {flex: 50%;}
 .listing > span {float: right;}
-.box {
+.wrapper {
+	list-style-type: none;
+	padding-left: 0px;
   display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
-	gap: 0.5em;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
+  gap: 1em;
   grid-auto-flow: dense;
 }
+.wrapper li.landscape {grid-column-end: span 2;}
+
 
 .inline-img {
 	height: 33px;
@@ -129,7 +145,6 @@ fieldset {border:1px solid;}
 footer {border-top:1.5px solid;padding:1em 0 0 0;margin:1em 0 0 0;clear:both}
 footer>* {display:inline-block;}
 footer img {margin:0 0 -10px 0;width:30px;} 
-footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-rotate(289deg)brightness(88%)contrast(79%);}
 
 	</style>
 
@@ -150,89 +165,88 @@ footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-
 <p>This is a page to give a full list of files and directories saved on this website.</p>
 
 <ul>
-	<li><a href="files/bee.txt">bee.txt</a></li>
-	<li><a href="files/uxn-zine.pdf">uxn-zine.pdf</a></li>
-	<li><a href="files/uxn-zine.tar">uxn-zine.tar</a></li>
-	<li><a href="files/minecraft.service">minecraft.service</a></li>
-	<li><a href="files/thul.html">thul.html</a></li>
-	<li><a href="files/starship.toml">starship.toml</a></li>
-	<li><a href="files/kexp.mp3.m3u">kexp.mp3.m3u</a></li>
-	<li><a href="files/get-some-more.txt">get-some-more.txt</a></li>
-	<li><a href="files/monitorswitch.txt">monitorswitch.txt</a></li>
-	<li><a href="files/mtrack.rs">mtrack.rs</a></li>
-	<li><a href="files/newsboat-config">newsboat-config</a></li>
-	<li><a href="files/thul.md">thul.md</a></li>
-	<li><a href="files/mx.zip">mx.zip</a></li>
-	<li><a href="files/cat-sync">cat-sync</a></li>
-	<li><a href="files/mpv.conf">mpv.conf</a></li>
-	<li><a href="files/per-tab.txt">per-tab.txt</a></li>
-	<li><a href="files/sway/config">sway/config</a></li>
-	<li><a href="files/sway/config.d/screenlock_powersave">sway/config.d/screenlock_powersave</a></li>
-	<li><a href="files/sway/scripts/sway_bar.sh">sway/scripts/sway_bar.sh</a></li>
-	<li><a href="files/ecs/components.c">ecs/components.c</a></li>
-	<li><a href="files/ecs/main.c">ecs/main.c</a></li>
-	<li><a href="files/ecs/manager.h">ecs/manager.h</a></li>
-	<li><a href="files/ecs/manager.c">ecs/manager.c</a></li>
-	<li><a href="files/ecs/ecs.c">ecs/ecs.c</a></li>
-	<li><a href="files/minecraft-mods/indium-1.0.5+mc1.19.jar">minecraft-mods/indium-1.0.5+mc1.19.jar</a></li>
-	<li><a href="files/minecraft-mods/fabric-api-0.56.0+1.19.jar">minecraft-mods/fabric-api-0.56.0+1.19.jar</a></li>
-	<li><a href="files/minecraft-mods/fpsdisplay-1.5.0+1.19.jar">minecraft-mods/fpsdisplay-1.5.0+1.19.jar</a></li>
-	<li><a href="files/minecraft-mods/tweakeroo-fabric-1.19-0.13.3.jar">minecraft-mods/tweakeroo-fabric-1.19-0.13.3.jar</a></li>
-	<li><a href="files/minecraft-mods/malilib-fabric-1.19-0.12.1.jar">minecraft-mods/malilib-fabric-1.19-0.12.1.jar</a></li>
-	<li><a href="files/minecraft-mods/modmenu-4.0.0.jar">minecraft-mods/modmenu-4.0.0.jar</a></li>
-	<li><a href="files/minecraft-mods/fabric-installer-0.11.0.jar">minecraft-mods/fabric-installer-0.11.0.jar</a></li>
-	<li><a href="files/minecraft-mods/sodium-fabric-mc1.19-0.4.2build.16.jar">minecraft-mods/sodium-fabric-mc1.19-0.4.2build.16.jar</a></li>
-	<li><a href="files/ranger/rifle.conf">ranger/rifle.conf</a></li>
-	<li><a href="files/ranger/rc.conf">ranger/rc.conf</a></li>
-	<li><a href="files/ranger/scope.sh">ranger/scope.sh</a></li>
-	<li><a href="files/vscode/settings.json">vscode/settings.json</a></li>
-	<li><a href="files/vscode/keybindings.json">vscode/keybindings.json</a></li>
-	<li><a href="files/kitty/kitty.conf.user">kitty/kitty.conf.user</a></li>
-	<li><a href="files/kitty/kitty-snazzy.conf">kitty/kitty-snazzy.conf</a></li>
-	<li><a href="files/kitty/current-theme.conf">kitty/current-theme.conf</a></li>
-	<li><a href="files/kitty/colors.conf">kitty/colors.conf</a></li>
-	<li><a href="files/kitty/kitty.conf">kitty/kitty.conf</a></li>
-	<li><a href="files/kitty/kitty_defualt.conf">kitty/kitty_defualt.conf</a></li>
-	<li><a href="files/kitty/snazzy.conf">kitty/snazzy.conf</a></li>
-	<li><a href="files/kitty/unicode-input-favorites.conf">kitty/unicode-input-favorites.conf</a></li>
-	<li><a href="files/kitty/kitty-unicode.conf">kitty/kitty-unicode.conf</a></li>
-	<li><a href="files/kitty/kitty.conf.bak">kitty/kitty.conf.bak</a></li>
-	<li><a href="files/uxn-zine/source.fls">uxn-zine/source.fls</a></li>
-	<li><a href="files/uxn-zine/uxn-zine.pdf">uxn-zine/uxn-zine.pdf</a></li>
-	<li><a href="files/uxn-zine/uxn-zine.epub">uxn-zine/uxn-zine.epub</a></li>
-	<li><a href="files/uxn-zine/source.pdf">uxn-zine/source.pdf</a></li>
-	<li><a href="files/uxn-zine/zine.log">uxn-zine/zine.log</a></li>
-	<li><a href="files/uxn-zine/__latexindent_temp.tex">uxn-zine/__latexindent_temp.tex</a></li>
-	<li><a href="files/uxn-zine/source.synctex">uxn-zine/source.synctex</a></li>
-	<li><a href="files/uxn-zine/zine.synctex">uxn-zine/zine.synctex</a></li>
-	<li><a href="files/uxn-zine/zine.pdf">uxn-zine/zine.pdf</a></li>
-	<li><a href="files/uxn-zine/zine.fdb_latexmk">uxn-zine/zine.fdb_latexmk</a></li>
-	<li><a href="files/uxn-zine/zine.aux">uxn-zine/zine.aux</a></li>
-	<li><a href="files/uxn-zine/source.log">uxn-zine/source.log</a></li>
-	<li><a href="files/uxn-zine/zine.fls">uxn-zine/zine.fls</a></li>
-	<li><a href="files/uxn-zine/zine.tex">uxn-zine/zine.tex</a></li>
-	<li><a href="files/uxn-zine/source.tex">uxn-zine/source.tex</a></li>
-	<li><a href="files/uxn-zine/source.fdb_latexmk">uxn-zine/source.fdb_latexmk</a></li>
-	<li><a href="files/uxn-zine/source.aux">uxn-zine/source.aux</a></li>
-	<li><a href="files/uxn-zine/images/00_uxn_notes-680.png">uxn-zine/images/00_uxn_notes-680.png</a></li>
-	<li><a href="files/uxn-zine/images/08_bit_shifting-680.png">uxn-zine/images/08_bit_shifting-680.png</a></li>
-	<li><a href="files/uxn-zine/images/04_stack-680.png">uxn-zine/images/04_stack-680.png</a></li>
-	<li><a href="files/uxn-zine/images/11_drawing_sprites-680.png">uxn-zine/images/11_drawing_sprites-680.png</a></li>
-	<li><a href="files/uxn-zine/images/05_runes_labels_macros-680.png">uxn-zine/images/05_runes_labels_macros-680.png</a></li>
-	<li><a href="files/uxn-zine/images/12_drawing_sprites2-680.png">uxn-zine/images/12_drawing_sprites2-680.png</a></li>
-	<li><a href="files/uxn-zine/images/01_binary_encoding-680.png">uxn-zine/images/01_binary_encoding-680.png</a></li>
-	<li><a href="files/uxn-zine/images/13_input-680.png">uxn-zine/images/13_input-680.png</a></li>
-	<li><a href="files/uxn-zine/images/14_comparison-680.png">uxn-zine/images/14_comparison-680.png</a></li>
-	<li><a href="files/uxn-zine/images/02_cpu-680.png">uxn-zine/images/02_cpu-680.png</a></li>
-	<li><a href="files/uxn-zine/images/06_instruction_cycle-680.png">uxn-zine/images/06_instruction_cycle-680.png</a></li>
-	<li><a href="files/uxn-zine/images/09_sprite_encoding_1bpp-680.png">uxn-zine/images/09_sprite_encoding_1bpp-680.png</a></li>
-	<li><a href="files/uxn-zine/images/07_aritmetics-680.png">uxn-zine/images/07_aritmetics-680.png</a></li>
-	<li><a href="files/uxn-zine/images/03_memory-680.png">uxn-zine/images/03_memory-680.png</a></li>
-	<li><a href="files/uxn-zine/images/10_sprite_encoding_2bpp-680.png">uxn-zine/images/10_sprite_encoding_2bpp-680.png</a></li>
+	<li><a href="c/files/bee.txt">s/bee.txt</a></li>
+	<li><a href="c/files/uxn-zine.pdf">s/uxn-zine.pdf</a></li>
+	<li><a href="c/files/uxn-zine.tar">s/uxn-zine.tar</a></li>
+	<li><a href="c/files/minecraft.service">s/minecraft.service</a></li>
+	<li><a href="c/files/thul.html">s/thul.html</a></li>
+	<li><a href="c/files/starship.toml">s/starship.toml</a></li>
+	<li><a href="c/files/kexp.mp3.m3u">s/kexp.mp3.m3u</a></li>
+	<li><a href="c/files/get-some-more.txt">s/get-some-more.txt</a></li>
+	<li><a href="c/files/monitorswitch.txt">s/monitorswitch.txt</a></li>
+	<li><a href="c/files/mtrack.rs">s/mtrack.rs</a></li>
+	<li><a href="c/files/newsboat-config">s/newsboat-config</a></li>
+	<li><a href="c/files/thul.md">s/thul.md</a></li>
+	<li><a href="c/files/cat-sync">s/cat-sync</a></li>
+	<li><a href="c/files/mpv.conf">s/mpv.conf</a></li>
+	<li><a href="c/files/per-tab.txt">s/per-tab.txt</a></li>
+	<li><a href="c/files/sway/config">s/sway/config</a></li>
+	<li><a href="c/files/sway/config.d/screenlock_powersave">s/sway/config.d/screenlock_powersave</a></li>
+	<li><a href="c/files/sway/scripts/sway_bar.sh">s/sway/scripts/sway_bar.sh</a></li>
+	<li><a href="c/files/ecs/components.c">s/ecs/components.c</a></li>
+	<li><a href="c/files/ecs/main.c">s/ecs/main.c</a></li>
+	<li><a href="c/files/ecs/manager.h">s/ecs/manager.h</a></li>
+	<li><a href="c/files/ecs/manager.c">s/ecs/manager.c</a></li>
+	<li><a href="c/files/ecs/ecs.c">s/ecs/ecs.c</a></li>
+	<li><a href="c/files/minecraft-mods/indium-1.0.5+mc1.19.jar">s/minecraft-mods/indium-1.0.5+mc1.19.jar</a></li>
+	<li><a href="c/files/minecraft-mods/fabric-api-0.56.0+1.19.jar">s/minecraft-mods/fabric-api-0.56.0+1.19.jar</a></li>
+	<li><a href="c/files/minecraft-mods/fpsdisplay-1.5.0+1.19.jar">s/minecraft-mods/fpsdisplay-1.5.0+1.19.jar</a></li>
+	<li><a href="c/files/minecraft-mods/tweakeroo-fabric-1.19-0.13.3.jar">s/minecraft-mods/tweakeroo-fabric-1.19-0.13.3.jar</a></li>
+	<li><a href="c/files/minecraft-mods/malilib-fabric-1.19-0.12.1.jar">s/minecraft-mods/malilib-fabric-1.19-0.12.1.jar</a></li>
+	<li><a href="c/files/minecraft-mods/modmenu-4.0.0.jar">s/minecraft-mods/modmenu-4.0.0.jar</a></li>
+	<li><a href="c/files/minecraft-mods/fabric-installer-0.11.0.jar">s/minecraft-mods/fabric-installer-0.11.0.jar</a></li>
+	<li><a href="c/files/minecraft-mods/sodium-fabric-mc1.19-0.4.2build.16.jar">s/minecraft-mods/sodium-fabric-mc1.19-0.4.2build.16.jar</a></li>
+	<li><a href="c/files/ranger/rifle.conf">s/ranger/rifle.conf</a></li>
+	<li><a href="c/files/ranger/rc.conf">s/ranger/rc.conf</a></li>
+	<li><a href="c/files/ranger/scope.sh">s/ranger/scope.sh</a></li>
+	<li><a href="c/files/vscode/settings.json">s/vscode/settings.json</a></li>
+	<li><a href="c/files/vscode/keybindings.json">s/vscode/keybindings.json</a></li>
+	<li><a href="c/files/kitty/kitty.conf.user">s/kitty/kitty.conf.user</a></li>
+	<li><a href="c/files/kitty/kitty-snazzy.conf">s/kitty/kitty-snazzy.conf</a></li>
+	<li><a href="c/files/kitty/current-theme.conf">s/kitty/current-theme.conf</a></li>
+	<li><a href="c/files/kitty/colors.conf">s/kitty/colors.conf</a></li>
+	<li><a href="c/files/kitty/kitty.conf">s/kitty/kitty.conf</a></li>
+	<li><a href="c/files/kitty/kitty_defualt.conf">s/kitty/kitty_defualt.conf</a></li>
+	<li><a href="c/files/kitty/snazzy.conf">s/kitty/snazzy.conf</a></li>
+	<li><a href="c/files/kitty/unicode-input-favorites.conf">s/kitty/unicode-input-favorites.conf</a></li>
+	<li><a href="c/files/kitty/kitty-unicode.conf">s/kitty/kitty-unicode.conf</a></li>
+	<li><a href="c/files/kitty/kitty.conf.bak">s/kitty/kitty.conf.bak</a></li>
+	<li><a href="c/files/uxn-zine/source.fls">s/uxn-zine/source.fls</a></li>
+	<li><a href="c/files/uxn-zine/uxn-zine.pdf">s/uxn-zine/uxn-zine.pdf</a></li>
+	<li><a href="c/files/uxn-zine/uxn-zine.epub">s/uxn-zine/uxn-zine.epub</a></li>
+	<li><a href="c/files/uxn-zine/source.pdf">s/uxn-zine/source.pdf</a></li>
+	<li><a href="c/files/uxn-zine/zine.log">s/uxn-zine/zine.log</a></li>
+	<li><a href="c/files/uxn-zine/__latexindent_temp.tex">s/uxn-zine/__latexindent_temp.tex</a></li>
+	<li><a href="c/files/uxn-zine/source.synctex">s/uxn-zine/source.synctex</a></li>
+	<li><a href="c/files/uxn-zine/zine.synctex">s/uxn-zine/zine.synctex</a></li>
+	<li><a href="c/files/uxn-zine/zine.pdf">s/uxn-zine/zine.pdf</a></li>
+	<li><a href="c/files/uxn-zine/zine.fdb_latexmk">s/uxn-zine/zine.fdb_latexmk</a></li>
+	<li><a href="c/files/uxn-zine/zine.aux">s/uxn-zine/zine.aux</a></li>
+	<li><a href="c/files/uxn-zine/source.log">s/uxn-zine/source.log</a></li>
+	<li><a href="c/files/uxn-zine/zine.fls">s/uxn-zine/zine.fls</a></li>
+	<li><a href="c/files/uxn-zine/zine.tex">s/uxn-zine/zine.tex</a></li>
+	<li><a href="c/files/uxn-zine/source.tex">s/uxn-zine/source.tex</a></li>
+	<li><a href="c/files/uxn-zine/source.fdb_latexmk">s/uxn-zine/source.fdb_latexmk</a></li>
+	<li><a href="c/files/uxn-zine/source.aux">s/uxn-zine/source.aux</a></li>
+	<li><a href="c/files/uxn-zine/images/00_uxn_notes-680.png">s/uxn-zine/images/00_uxn_notes-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/08_bit_shifting-680.png">s/uxn-zine/images/08_bit_shifting-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/04_stack-680.png">s/uxn-zine/images/04_stack-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/11_drawing_sprites-680.png">s/uxn-zine/images/11_drawing_sprites-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/05_runes_labels_macros-680.png">s/uxn-zine/images/05_runes_labels_macros-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/12_drawing_sprites2-680.png">s/uxn-zine/images/12_drawing_sprites2-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/01_binary_encoding-680.png">s/uxn-zine/images/01_binary_encoding-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/13_input-680.png">s/uxn-zine/images/13_input-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/14_comparison-680.png">s/uxn-zine/images/14_comparison-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/02_cpu-680.png">s/uxn-zine/images/02_cpu-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/06_instruction_cycle-680.png">s/uxn-zine/images/06_instruction_cycle-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/09_sprite_encoding_1bpp-680.png">s/uxn-zine/images/09_sprite_encoding_1bpp-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/07_aritmetics-680.png">s/uxn-zine/images/07_aritmetics-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/03_memory-680.png">s/uxn-zine/images/03_memory-680.png</a></li>
+	<li><a href="c/files/uxn-zine/images/10_sprite_encoding_2bpp-680.png">s/uxn-zine/images/10_sprite_encoding_2bpp-680.png</a></li>
 </ul>
 
 
-		<p><b>Incoming:</b> <a href="uxn_notes.html">uxn_notes</a> <a href="site.html">site</a> </p>
+		<p><b>Incoming:</b> <a href="ean-dockerfile/pages/uxn_notes.html">ean-dockerfile/pages/uxn_notes</a> <a href="ean-dockerfile/pages/site.html">ean-dockerfile/pages/site</a> </p>
 	</main>
 
 	<footer>
@@ -253,7 +267,7 @@ footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-
 		</a>
 		<img loading="lazy" style="width:88px;height:31px;margin-left:0.5ex;" title="my homemade site banner!" alt="site banner"
 			src="images/icon.gif" />
-		<span style="float: right;"><em>Last updated: 022323</em></span>
+		<span style="float: right;"><em>Last updated: 022523</em></span>
 	</footer>
 </body>
 </html>

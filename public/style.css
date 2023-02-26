@@ -59,14 +59,15 @@ code {color:var(--bg);background-color:var(--text);font-size:calc(0.8rem + 0.5vw
 
 button {
 	border-radius: 30px;
-	border: 1px solid black;
+	border: 1px solid var(--text);
 	background: none;
 	padding: 0px 10px;
 	font-weight: bold;
 	font-family: sans;
-	color: black;
+	color: var(--text);
 	font-size: 20px;
 }
+button:hover {color: var(--bg);background: var(--text);}
 
 dd {margin-left:2em;}
 details {padding-bottom:0ex;}
@@ -81,12 +82,16 @@ fieldset {border:1px solid;}
 .row {display: flex;}
 .column {flex: 50%;}
 .listing > span {float: right;}
-.box {
+.wrapper {
+	list-style-type: none;
+	padding-left: 0px;
   display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
-	gap: 0.5em;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
+  gap: 1em;
   grid-auto-flow: dense;
 }
+.wrapper li.landscape {grid-column-end: span 2;}
+
 
 .inline-img {
 	height: 33px;
@@ -101,4 +106,3 @@ fieldset {border:1px solid;}
 footer {border-top:1.5px solid;padding:1em 0 0 0;margin:1em 0 0 0;clear:both}
 footer>* {display:inline-block;}
 footer img {margin:0 0 -10px 0;width:30px;} 
-footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-rotate(289deg)brightness(88%)contrast(79%);}

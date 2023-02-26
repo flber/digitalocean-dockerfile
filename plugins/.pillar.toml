@@ -1,0 +1,10 @@
+[paths]
+template_path = "templates/"
+granite_path = "pages/"
+html_path = "docs/"
+plugin_path = "plugins/"
+music_path = "/home/user/Music/"
+
+[values]
+latest_length = 15
+last_run = 1664415201

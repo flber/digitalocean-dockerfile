@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>MX - A High-Level Overview of the WFC Algorithm</title>
+	<title>A High-Level Overview of the WFC Algorithm</title>
 	<link rel="icon" href="crow.ico?" type="image/x-icon">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,30 @@
 	<meta property="og:type" content="article"/>
 	<meta property="og:title" content="A High-Level Overview of the WFC Algorithm"/>
 	<link rel="feed" type="application/rss+xml" title="Mineral Existence RSS Feed" href="https://mineralexistence.com/feed.xml">
+
+	<!-- the below sections enables syntax highlighting when js is enabled, and reverts to the default when it isn't -->
+	<noscript>
+		<style>
+			pre {
+				font-size:calc(0.5rem + 0.25vw);
+				line-height:2.3ex;
+				overflow-x:auto; 
+				padding:2%; 
+				color:var(--bg);
+				background-color:var(--text); 
+			}
+		</style>
+	</noscript>
+	<script src="./assets/prism.js"></script>
+
+	
+	<script>
+		var link = document.createElement("link");
+		link.rel="stylesheet";
+		link.href="./assets/prism.css";
+		link.type="text/css";
+		document.getElementsByTagName("head")[0].appendChild(link);
+	</script>
 
 	<style>
 /* @import url('reset.css'); */
@@ -63,14 +87,25 @@ mark {background-color:var(--hl);color:var(--bg);}
 hr {height:1px;border-width:0;color:var(--text);background-color:var(--text)} 
 
 pre {
-	font-size:calc(0.8rem + 0.5vw);
+	font-size:calc(0.5rem + 0.25vw);
 	line-height:2.3ex;
 	overflow-x:auto; 
 	padding:2%; 
 	color:var(--bg); 
-	background-color:var(--text);
+	background-color:var(--text); 
 }
-code {color:var(--bg);background-color:var(--text);font-size:calc(0.8rem + 0.5vw);padding-left: 0.2em;padding-right: 0.2em;}
+code {color:var(--bg);background-color:var(--text);font-size:calc(0.8rem + 0.5vw);padding-left: 0.2em;padding-right: 0.2em;} 
+
+button {
+	border-radius: 30px;
+	border: 1px solid var(--text);
+	background: none;
+	padding: 0px 10px;
+	font-weight: bold;
+	font-family: sans;
+	color: var(--text);
+	font-size: 20px;
+}
 
 dd {margin-left:2em;}
 details {padding-bottom:0ex;}
@@ -109,15 +144,9 @@ fieldset {border:1px solid;}
 footer {border-top:1.5px solid;padding:1em 0 0 0;margin:1em 0 0 0;clear:both}
 footer>* {display:inline-block;}
 footer img {margin:0 0 -10px 0;width:30px;} 
-footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-rotate(289deg)brightness(88%)contrast(79%);}
 
 	</style>
 
-	<!-- <script> -->
-		<!-- const root = document.documentElement; -->
-		<!-- var hue = Math.floor(Math.random() * 256); -->
-		<!-- root.style.setProperty("--bg", "hsl(" + hue + ", 50%, 80%)"); -->
-	<!-- </script> -->
 </head>
 
 <body>
@@ -151,7 +180,7 @@ footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-
  
  
 
-		<p><b>Incoming:</b> <a href="wfc-guide.html">wfc-guide</a> </p>
+		<p><b>Incoming:</b> <a href="ean-dockerfile/pages/wfc-guide.html">ean-dockerfile/pages/wfc-guide</a> </p>
 	</main>
 
 	<footer>
@@ -172,7 +201,7 @@ footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-
 		</a>
 		<img loading="lazy" style="width:88px;height:31px;margin-left:0.5ex;" title="my homemade site banner!" alt="site banner"
 			src="images/icon.gif" />
-		<span style="float: right;"><em>Last updated: 020223</em></span>
+		<span style="float: right;"><em>Last updated: 022523</em></span>
 	</footer>
 </body>
 </html>

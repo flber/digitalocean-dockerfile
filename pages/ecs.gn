@@ -1,0 +1,18 @@
+!meta!
+title: Entity Component System
+!meta!
+
+[h2|Entity Component System]
+
+[mark|ehhhh... not sure if I'm going to continue this in C]
+
+[p|I'm working on a small ECS in C with raylib. You can see the up-to-date files below, and I'll write something about my C & Raylib setup later.]
+
+
+[ul|
+	[li|[a, href: "files/ecs/main.c"|main.c]]
+	[li|[a, href: "files/ecs/ecs.c"|ecs.c]]
+	[li|[a, href: "files/ecs/components.c"|components.c]]
+	[li|[a, href: "files/ecs/manager.c"|manager.c]]
+	[li|[a, href: "files/ecs/manager.h"|manager.h]]
+]

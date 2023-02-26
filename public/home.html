@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>MX - Hello there</title>
+	<title>Hello there</title>
 	<link rel="icon" href="crow.ico?" type="image/x-icon">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,6 +96,18 @@ pre {
 }
 code {color:var(--bg);background-color:var(--text);font-size:calc(0.8rem + 0.5vw);padding-left: 0.2em;padding-right: 0.2em;} 
 
+button {
+	border-radius: 30px;
+	border: 1px solid var(--text);
+	background: none;
+	padding: 0px 10px;
+	font-weight: bold;
+	font-family: sans;
+	color: var(--text);
+	font-size: 20px;
+}
+button:hover {color: var(--bg);background: var(--text);}
+
 dd {margin-left:2em;}
 details {padding-bottom:0ex;}
 fieldset {border:1px solid;}
@@ -109,12 +121,16 @@ fieldset {border:1px solid;}
 .row {display: flex;}
 .column {flex: 50%;}
 .listing > span {float: right;}
-.box {
+.wrapper {
+	list-style-type: none;
+	padding-left: 0px;
   display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
-	gap: 0.5em;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
+  gap: 1em;
   grid-auto-flow: dense;
 }
+.wrapper li.landscape {grid-column-end: span 2;}
+
 
 .inline-img {
 	height: 33px;
@@ -129,7 +145,6 @@ fieldset {border:1px solid;}
 footer {border-top:1.5px solid;padding:1em 0 0 0;margin:1em 0 0 0;clear:both}
 footer>* {display:inline-block;}
 footer img {margin:0 0 -10px 0;width:30px;} 
-footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-rotate(289deg)brightness(88%)contrast(79%);}
 
 	</style>
 
@@ -162,27 +177,26 @@ footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-
 <p>I still don't have an especially insteresting way to organize my pages ( I'm thinking something with graphs for the future :D ), so here's a list of all orphaned pages from this page. Over time this list will change as I find better ways of organizing things, but for now, here it is. Enjoy, and have fun finding the rest of the pages on this site :3</p>
 <b>Orphans (6):</b>
 <ul>
-	<li><a href="hello.html">Hello!</a></li>
-	<li><a href="hallowseve-2022.html">Hallow's eve 2022</a></li>
-	<li><a href="side_quests.html">Side Quests</a></li>
-	<li><a href="once-upon-a-midday-sunny.html">Once Upon a Mid-day Sunny</a></li>
-	<li><a href="later.html">For later</a></li>
-	<li><a href="index.html">Index</a></li>
+	<li><a href="ean-dockerfile/pages/hello.html">Hello!</a></li>
+	<li><a href="ean-dockerfile/pages/hallowseve-2022.html">Hallow's eve 2022</a></li>
+	<li><a href="ean-dockerfile/pages/side_quests.html">Side Quests</a></li>
+	<li><a href="ean-dockerfile/pages/once-upon-a-midday-sunny.html">Once Upon a Mid-day Sunny</a></li>
+	<li><a href="ean-dockerfile/pages/later.html">For later</a></li>
+	<li><a href="ean-dockerfile/pages/index.html">Index</a></li>
 </ul>
 
 <p>And because I find myself needing to check recently update pages a lot for debugging, here are the three most recently updated pages:</p>
 
 <h3>Latest:</h3>
 <ul>
+	<li>260223 - <a href="about.html">About</a></li>
+	<li>260223 - <a href="home.html">Home</a></li>
 	<li>240223 - <a href="f3.html">Nikon F3/T</a></li>
 	<li>240223 - <a href="mushrooms.html">Mushrooms</a></li>
 	<li>230223 - <a href="hike-260522.html">Santa Cruz Hike 260522</a></li>
-	<li>230223 - <a href="about.html">About</a></li>
-	<li>150223 - <a href="site.html">Updates</a></li>
 </ul>
 
-
-		<p><b>Incoming:</b> <a href="site.html">site</a> <a href="index.html">index</a> </p>
+		<p><b>Incoming:</b> <a href="ean-dockerfile/pages/site.html">ean-dockerfile/pages/site</a> <a href="ean-dockerfile/pages/index.html">ean-dockerfile/pages/index</a> </p>
 	</main>
 
 	<footer>
@@ -203,7 +217,7 @@ footer img:not([title*='banner']) {filter:invert(16%)sepia(6%)saturate(445%)hue-
 		</a>
 		<img loading="lazy" style="width:88px;height:31px;margin-left:0.5ex;" title="my homemade site banner!" alt="site banner"
 			src="images/icon.gif" />
-		<span style="float: right;"><em>Last updated: 022323</em></span>
+		<span style="float: right;"><em>Last updated: 022523</em></span>
 	</footer>
 </body>
 </html>

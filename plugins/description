@@ -1,0 +1,41 @@
+#!/usr/bin/python
+
+import os
+import sys
+import datetime
+import glob
+import time
+from bs4 import BeautifulSoup
+
+def html_path():
+	file = open(".pillar.toml").readlines()
+	for lines in file:
+		k = lines.split()
+		if len(k) > 0 and k[0] == "html_path":
+			html_path = k[2]
+	return html_path
+
+def get_description(path):
+	abspath = os.path.abspath(html_path()[1:-1])
+	path = path.replace(".gn", ".html")
+	path = path.replace("pages/", "/")
+	file = abspath + path[:-1]
+	page = open(file).readlines()
+	if page == "":
+	    return "Page hasn't been generated yet, should be up in a little bit :)"
+	for p_line in page:
+		p_line = p_line.strip()
+		if "<p>" in p_line:
+			p_line = BeautifulSoup(p_line, features="html5lib").get_text()
+			description = p_line[4:-5]
+			# description.replace("\"", "\\\"")
+			return p_line
+	return "Page description couldn't be generated :/"
+
+for index, line in enumerate(sys.stdin):
+	if index == 0:
+		path_str = line
+	if "{{description}}" in line:
+		# pass
+		line = line.replace("{{description}}", get_description(path_str))
+	sys.stdout.write(line)

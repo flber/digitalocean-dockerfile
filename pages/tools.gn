@@ -1,0 +1,105 @@
+!meta!
+title: Tools
+!meta!
+
+[h2|Tools]
+
+[p|I just (as of 020821) had a realization! I don't just have to host html and images on this site, I can do whatever I want! With that crazy (obvious) idea, here are some projects I am or have been working on. Some are finished, some are not, but at least they should all be easy to access from here. I should have "--help" menus for some of these, but don't hesitate to ask me a question if something still doesn't make sense.]
+
+[h3, id: "listening"|[a, href: "#listening"|listening]]
+[details|
+	[summary|[a, href: "projects/listening"|listening.sh]]
+	[pre|
+		{{catfile}}"projects/listening"
+	]
+]
+[p|This script, which should be run once on startup to work, prints what cmus is currently playing into a text file, allowing me to see what artists, albums, and songs I've been listening to. I originally tried to implement this using cron instead of an infinite loop with sleep statements, but found it was too difficult to debug the environment in which cron runs its jobs to be reliable. This is a bit of a hacky solution, but it works well for now.]
+
+[h3|[a, href: "https://github.com/flber/ffmpeg-stream-tools"|ffmpeg-stream-tools]]
+[p|A collection of tools, these are various scripts and files to streamline more complex usage of ffmpeg when working with live streamed video and audio files. Currently very much in a brittle state as I work to improve the documentation and examples, but the ultimate goal is to have a robust collection of tools which facilitate the complex functions of ffmpeg in a more manageable and understandable way.]
+
+[h3|[a, href: "projects/ptable"|ptable]]
+[p|This was a simple utility I wrote a while ago for chem class. It can print out a periodic table (which I wrote by hand!), give you atomic data from an atomic symbol, and average atomic mass from one (or more) elements in the form of `{coefficient}{atomic symbol} {coefficient}{atomic symbol} ...`.]
+[p|Example:]
+[pre|
+> ptable -m H 7C 4H N S 3O
+mass of H: 1.008
+coefficient of H: 1
+total mass of H: 1.008
+...
+            ┌─────────┐
+total mass: │ 183.180 │
+            └─────────┘
+]
+
+[h3|[a, href: "projects/uxnrun"|uxnrun]]
+[p|The build process for [a, href: "uxn_notes.html"|uxn] really isn't that complicated, but to streamline things a bit for myself I wrote this script! It requires you to have a .uxn folder in your home directory, with a bin directory in that with `uxnasm` and `uxnemu`. It takes the relative path of a .tal file in the .uxn directory, assembles it into a rom in the bin directory, and runs the rom with varvara.]
+[p|Example:]
+[pre|
+> uxnrun left.tal
+building and running left
+]
+
+[h3|[a, href: "files/mtrack.rs"|mtrack]]
+[mark|[strong|Not an executable; needs compiling]]
+[p|I wrote this a while ago to track changes in mood, because I wanted some more data on my mental health (I think it was also one of the first programs I wrote in Rust?). It requires an "mtrack" directory in your .config folder, with a log.txt file (though I think it should also create those things when you first run it). you can then use it by running `mtrack xxx message`, where `xxx` is a string up to three characters to designate a change in mood. I, for example, use "+" to mark positive changes, and "-" to mark negative changes, with fewer characters being a smaller change. The `message` portion is an optional note about the reason for the change, which I would recommend putting in quotes to sanitize it. I haven't written any parsing programs for the log file yet, but it's on my todo list!]
+[p|Example:]
+[pre|
+> mtrack ++ "working on website"
+logged
+]
+
+[h3|[a, href: "projects/syncpi"|syncpi]]
+[p|A really bare-bones bash script, but one I use all the time, syncpi syncs my laptop with my pi. I have an ip/ dir in my home folder which is a git repo of a gist I have which is just a text file with the ip address of my pi. This may seem a bit over-complicated (and it probably is), but it was a quick way to get around the fact that my pi doesn't have a static ip. Every five minutes or so my pi checks its ip and pushes it to the gist. To sync my laptop to my pi, this script pulls that repo to make sure its up to date, then uses rsync to sync the folders I want. Those are currently my mtrack config folder, my Documents folder, my backgrounds, and my .config folder.]
+[p|Example:]
+[pre|
+> syncpi
+Already up to date
+sending incremental file list
+...
+]
+
+[h3|[a, href: "projects/sumtime"|sumtime]]
+[p|A (no-longer-so) small bash script to figure out how much time I spent on a project. It takes a newline-separated list of times (and an optional largest unit) and gives a total. That list of times is just given through stdin, so you can run it and manually type in the list of times, or do something like pass the contents of a file containing your data.]
+[p|Example:]
+[pre|
+> cat times.txt
+12:00
+12:30:15
+00:30
+> cat times.txt | sumtime h
+Time (d:h:m:s)
+1:1:0:15
+]
+
+[h3|[a, href: "projects/proctime"|proctime]]
+[p|proctime takes a program to run, and when the program closes returns the time (in min:sec format) that it was run for.] 
+[p|Example:]
+[pre|
+> proctime brogue-ce-git
+1:37
+]
+
+[h3|[a, href: "projects/prpnd"|prpnd]]
+[p|Super simple, prepends a given string to a file.] 
+[p|Example:]
+[pre|
+> cat test.txt
+this is a test
+such test, much wow
+> prpnd "This goes at the top" test.txt
+> cat test.txt
+This goes at the top
+this is a test
+such test, much wow
+]
+
+[h3|[a, href: "projects/proctrack"|proctrack]]
+[p|Uses prpnd, proctime, and sumtime to track how much time programs have been run for. Most useful to alias programs you're interested in tracking like so: `alias brogue='proctrack brogue'`] 
+[p|Example:]
+[pre|
+> proctrack brogue
+> cat ~/.proctimes
+brogue-ce-git 0:0:1:49
+micro 0:0:0:19
+]

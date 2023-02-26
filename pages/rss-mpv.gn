@@ -1,0 +1,40 @@
+!meta!
+title: RSS + MPV
+!meta!
+
+[h2|My youtube setup]
+
+[details|
+	[summary|[h3|TL;DR]]
+	[p|I use [a, href: "https://newsboat.org/"|newsboat] to subscribe to youtube channels through RSS, and can easily watch new videos from them with [a, href: "https://mpv.io/"|mpv] using [a, href: "https://github.com/yt-dlp/yt-dlp"|yt-dlp]. Configs below.]
+
+	[details|
+		[summary|newsboat config]
+		[pre|
+			{{catfile}}"files/newsboat-config"
+		]
+	]
+
+	[details|
+		[summary|mpv config]
+		[pre|
+			{{catfile}}"files/mpv.conf"
+		]
+	]
+]
+
+[h3|Why RSS?]
+
+[p|I never started using any of the common social media platforms (except reddit for a couple years), so I never had to deal with developing bad habits around them. Youtube, however, has long been a common time suck for me - where one interesting video will lead to five uninteresting ones, a rabbit hole pushed by youtube's recommendation algorithm. After various experiments making it harder to access youtube, or outright blocking it, I think I've found a good middle ground.]
+
+[p|I don't want to completely stop using youtube because there are a few channels whose videos I'm always interested in, so my current solution is based on RSS. With an RSS feed reader (in this case newsboat because of some features I'll go into in a second), I can subscribe to my favorite channels and see when they publish new videos through a text-based user interface which discourages that attention-grabbing youtube's website is so good at.]
+
+[p|To make the process easier - and independent of youtube's frontend - I've set up a macro in my newsboat config file which opens video links in mpv. To make this a little easier on my old laptop, my mpv config file also specifies a maximum resolution at which the video should load, which also helps with playback stability.]
+
+[h3|Specifics]
+
+[p|Over the past several months I've been doing a decent amount of my interaction with the small internet of blogs and webcomics through rss, and it's been great! I've got an rss reader app on my phone, but I hadn't got around to setting one up on my laptop until a couple days ago. I really like terminal user interfaces, so after some [a, href: "https://merveilles.town/@flbr/108279608942453026"|recomendations] I decided to use [a, href: "https://newsboat.org/"|newsboat].]
+
+[p|Now to get newboat reading rss feeds from youtube, you need to get specific urls. Each channel has a unique id, something decently long and alphanumeric (this is not the channel name which often shows up in urls!). To add the channel to your feed reader, format the url like so: [code|https://www.youtube.com/feeds/videos.xml?channel_id=${id}]. For example, the url to the rss feed of Zee Bashew is [code|https://www.youtube.com/feeds/videos.xml?channel_id=UCCXR2kCo7Lcw_BKwWxo09kw]]
+
+[p|The reason I've been enjoying this way of interacting with youtube is that it cuts out the middle man of the youtube recomendation algorithms. [em|I] know that there are only a few people who make videos I'll always like, but my stupid new-thing-seeking lizard brain really hasn't gotten the message, and youtube knows that! So while I retrain my brain to maybe [em|not] latch onto the nearest new thing for entertainment, removing youtube's manipulative algorithms from the equation should help.]
